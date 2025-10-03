@@ -1,64 +1,56 @@
-# EcoTrips — Estudo de Performance Web
+🔍 Análise Inicial (Before)
 
-Projeto estático com duas versões para avaliação de performance:
-- **before/**: versão com gargalos propositais
-- **after/**: versão otimizada (imagens AVIF/WEBP, lazy, minificação, remoção de código morto)
+Gargalos encontrados no relatório Lighthouse:
 
-## Como rodar
-```bash
-npx http-server -p 3000 .
-# http://127.0.0.1:3000/before/
-# http://127.0.0.1:3000/after/
+Imagens em PNG pesadas, sem lazy-loading e sem formatos otimizados.
 
-# Análise Inicial (Lighthouse - Antes)
-Gargalos detectados
+Fonts → carregando via Google Fonts (bloqueando renderização).
 
-Fonte Google bloqueando renderização.
+JS → não minificado, carregado de forma síncrona.
 
-JS síncrono e loop pesado (bloqueio).
+CSS → regras não utilizadas e sem minificação.
 
-Imagens JPG muito grandes, sem lazy e sem srcset.
+HTML → sem preload, recursos sem defer/async.
 
-CSS não minificado e com regras não utilizadas.
-
-Recursos sem defer ou otimização.
-
-### Prints (Before)
-
+Prints (Before)
 ![Before 1](./docs/before1.png)
 ![Before 2](./docs/before2.png)
 ![Before 3](./docs/before3.png)
 
-### Prints (After)
+🚀 Melhorias aplicadas
+
+Imagens → convertidas para WEBP/AVIF, uso de srcset, sizes, loading="lazy" e decoding="async".
+
+Fonts → removido Google Fonts, adotado system font stack.
+
+JS → minificação, uso de type="module" e defer.
+
+CSS → minificado + remoção de estilos não utilizados.
+
+HTML → preload da imagem principal e ordem de recursos otimizada.
+
+✅ Reanálise (After)
+
+Resultados após aplicar as melhorias:
+
+Performance: subiu de ~71% para 95% (conforme prints).
+
+Acessibilidade: manteve 100%.
+
+Best Practices: manteve 100%.
+
+SEO: subiu de ~71% para 95% (conforme prints)
+
+Prints (After)
 
 ![After 1](./docs/after1.png)
 ![After 2](./docs/after2.png)
 ![After 3](./docs/after3.png)
 
 
-# Reanálise (Lighthouse - Depois)
-Melhorias aplicadas
-
-Imagens → uso de AVIF/WEBP via auto=format, srcset, sizes, loading="lazy", decoding="async + dimensões fixas.
-
-Fonts → removido Google Fonts, adotado system font stack.
-
-JS → minificado, sem loops bloqueantes, type="module" + defer.
-
-CSS → crítico inline + minificação, remoção de estilos não usados.
-
-HTML → preload da imagem principal, minificação, ordem de recursos otimizada.
-
-
-
-# Comparativo before x after
-
-Performance: subiu de 71% → 95% (conforme prints).
-
-Best Practices: manteve 100% em ambos
-
-SEO: subiu de 91% → 100% (conforme prints)
-
-Accessibility: melhorou com uso de alt + dimensões fixas.
-
-Impacto real: tempo de carregamento mais rápido, menos bytes transferidos, renderização sem bloqueios, experiência mobile estável.
+📊 Comparativo Before x After
+Métrica	           Before	After
+Performance	        71%  	95%
+Acessibilidade	     95%	95%
+Best Practices	    100%	100%
+SEO	                100%	100%
