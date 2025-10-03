@@ -1,0 +1,4 @@
+/* CSS restante minificado (removido o que não é usado) */
+.hero{margin-top:12px}
+.grid img{transition:transform .2s ease}
+.grid img:hover{transform:translateY(-2px)}

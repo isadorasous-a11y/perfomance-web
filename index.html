@@ -1,0 +1,84 @@
+<!doctype html><html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EcoTrips — Galeria (otimizado)</title>
+<meta name="description" content="Galeria leve com imagens em AVIF/WEBP, lazy-loading e assets minificados.">
+<style>
+/* Critical CSS (apenas o necessário acima da dobra) */
+:root{--bg:#0b1020;--text:#e2e8f0;--muted:#94a3b8;}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Arial}
+.topbar{padding:20px 16px;text-align:center;border-bottom:1px solid rgba(255,255,255,.08)}
+.subtitle{color:var(--muted);margin:8px 0 0}
+.container{max-width:1100px;margin:20px auto;padding:0 16px}
+.hero img,.grid img{width:100%;height:auto;display:block;border-radius:12px}
+.grid{margin-top:16px;display:grid;gap:12px;grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
+.footer{text-align:center;padding:20px 0 36px;color:var(--muted)}
+</style>
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=60">
+<link rel="stylesheet" href="./styles.min.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="./styles.min.css"></noscript>
+<script type="module" defer src="./js/app.min.js"></script>
+</head><body>
+<header class="topbar">
+  <h1>EcoTrips — Galeria de Viagens</h1>
+  <p class="subtitle">Versão otimizada (lazy, AVIF/WEBP, minificação, sem fontes externas).</p>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <img
+      src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=60"
+      srcset="
+        https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=60 800w,
+        https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=60 1200w,
+        https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=60 1600w"
+      sizes="(max-width: 600px) 100vw, 1100px"
+      width="1600" height="900"
+      decoding="async" fetchpriority="high" alt="Montanhas ao pôr do sol">
+  </section>
+
+  <section class="grid">
+    <!-- Galeria: lazy + imagens responsivas -->
+    <img loading="lazy" decoding="async"
+      src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=60"
+      srcset="
+        https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=60 600w,
+        https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=60 1000w"
+      sizes="(max-width: 900px) 50vw, 33vw" width="1000" height="667" alt="Praia 1">
+    <img loading="lazy" decoding="async"
+      src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=60"
+      srcset="
+        https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=60 600w,
+        https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=60 1000w"
+      sizes="(max-width: 900px) 50vw, 33vw" width="1000" height="667" alt="Praia 2">
+    <img loading="lazy" decoding="async"
+      src="https://images.unsplash.com/photo-1519817650390-64a93db511aa?auto=format&fit=crop&w=800&q=60"
+      srcset="
+        https://images.unsplash.com/photo-1519817650390-64a93db511aa?auto=format&fit=crop&w=600&q=60 600w,
+        https://images.unsplash.com/photo-1519817650390-64a93db511aa?auto=format&fit=crop&w=1000&q=60 1000w"
+      sizes="(max-width: 900px) 50vw, 33vw" width="1000" height="667" alt="Trilha">
+    <img loading="lazy" decoding="async"
+      src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=60"
+      srcset="
+        https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=600&q=60 600w,
+        https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1000&q=60 1000w"
+      sizes="(max-width: 900px) 50vw, 33vw" width="1000" height="667" alt="Lago">
+    <img loading="lazy" decoding="async"
+      src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=800&q=60"
+      srcset="
+        https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=600&q=60 600w,
+        https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1000&q=60 1000w"
+      sizes="(max-width: 900px) 50vw, 33vw" width="1000" height="667" alt="Floresta">
+    <img loading="lazy" decoding="async"
+      src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=60"
+      srcset="
+        https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=600&q=60 600w,
+        https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1000&q=60 1000w"
+      sizes="(max-width: 900px) 50vw, 33vw" width="1000" height="667" alt="Cachoeira">
+  </section>
+</main>
+
+<footer class="footer"><small>Versão “after” — otimizada.</small></footer>
+</body></html>
