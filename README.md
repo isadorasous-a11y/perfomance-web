@@ -23,8 +23,17 @@ CSS não minificado e com regras não utilizadas.
 
 Recursos sem defer ou otimização.
 
-Prints (Before)
-<p align="center"> <img src="docs/before1.png" width="30%"> <img src="docs/before2.png" width="30%"> <img src="docs/before3.png" width="30%"> </p>
+### Prints (Before)
+
+![Before 1](docs/before1.png)  
+![Before 2](docs/before2.png)  
+![Before 3](docs/before3.png)  
+
+### Prints (After)
+
+![After 1](docs/after1.png)  
+![After 2](docs/after2.png)  
+![After 3](docs/after3.png) 
 
 
 # Reanálise (Lighthouse - Depois)
@@ -40,8 +49,7 @@ CSS → crítico inline + minificação, remoção de estilos não usados.
 
 HTML → preload da imagem principal, minificação, ordem de recursos otimizada.
 
-Prints (After)
-<p align="center"> <img src="docs/after1.png" width="30%"> <img src="docs/after2.png" width="30%"> <img src="docs/after3.png" width="30%"> </p>
+
 
 # Comparativo before x after
 
