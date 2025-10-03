@@ -25,15 +25,15 @@ Recursos sem defer ou otimização.
 
 ### Prints (Before)
 
-![Before 1](docs/before1.png)  
-![Before 2](docs/before2.png)  
-![Before 3](docs/before3.png)  
+![Before 1](./docs/before1.png)
+![Before 2](./docs/before2.png)
+![Before 3](./docs/before3.png)
 
 ### Prints (After)
 
-![After 1](docs/after1.png)  
-![After 2](docs/after2.png)  
-![After 3](docs/after3.png) 
+![After 1](./docs/after1.png)
+![After 2](./docs/after2.png)
+![After 3](./docs/after3.png)
 
 
 # Reanálise (Lighthouse - Depois)
